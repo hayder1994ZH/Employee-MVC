@@ -1,0 +1,138 @@
+#sidebar{
+    position: fixed;
+    top: 0px;
+    left: -255px;
+    height: 100%;
+    width: 230px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    background-color: #fff;
+    padding: 0px 30px;
+    transition: all .5s linear;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+
+
+#sidebar .toggleSidebar{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #5046FE;
+    border-radius: 5px;
+    position: absolute;
+    right: -25px;
+    bottom: 200px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+#sidebar.active .toggleSidebar i{
+    transition: all .5s linear;
+    transform: rotate(180deg);
+}
+
+#sidebar .logo-section{
+    padding: 10px 0px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+#sidebar .logo-section span{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #5046FE;
+    color: #fff;
+}
+
+#sidebar .logo-section h4{
+    padding: 0px 20px;
+    font-family: tahoma;
+    
+}
+
+#sidebar .content-section{
+    padding: 10px 0px;
+}
+
+#sidebar .content-section ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+#sidebar .content-section ul > li{
+    cursor: pointer;
+    color: rgb(171, 170, 170);
+    margin-bottom: 5px;
+    transition: all .5s linear;
+}
+#sidebar .content-section ul li .li-header{
+    padding: 10px 15px;
+}
+#sidebar .content-section ul li.active .li-header{
+    border-radius: 8px;
+    background-color: #F7F1FF;
+    color: #5046FE;
+}
+#sidebar .content-section ul li.active .name{
+    background-color: #F7F1FF;
+}
+#sidebar .content-section ul li i{
+    font-size: 20px;
+}
+#sidebar .content-section ul li .name{
+    padding: 0px 15px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar .content-section ul li .sub-ul{
+    padding-left: 25px;
+    padding-top: 5px;
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0px;
+    transition: all .5s linear;
+    padding-left: 25px;
+}
+#sidebar .content-section ul li.active .sub-ul{
+    padding-top: 5px;
+    max-height: 1000px;
+}
+#sidebar .content-section ul li .sub-ul .sub-item{
+    padding: 5px 0px;
+    cursor: pointer;
+    font-family: tahoma;
+}
+#sidebar .content-section .sub-item .line{
+    transition: all .5s linear;
+}
+#sidebar .content-section .sub-item:hover .line{
+    width: 15px;
+    display: inline-block;
+    height: 2px;
+    background-color: #5046FE;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+#sidebar .content-section .sub-item:hover line{
+    width: 5px;
+}
+#sidebar .content-section ul li ul .sub-item::before{
+    display: block;
+    height: 4px;
+    background-color: #ccc;
+}
+.list-item{
+    margin-top: 1rem;
+}
