@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\EmployeeController;
+use App\Http\Controllers\API\FormatJsonController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -11,4 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API! 
 |
 */
+Route::post('json/format', [FormatJsonController::class, 'store']);
+Route::get('employee', [EmployeeController::class, 'index']);
+Route::get('employee/salary', [EmployeeController::class, 'getSumSalariesGroupByCity']);
 
