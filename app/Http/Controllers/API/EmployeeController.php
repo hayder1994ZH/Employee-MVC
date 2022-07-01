@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Index\Pagination;
 use App\Repositories\EmployeeRepository;
 
@@ -21,8 +22,16 @@ class EmployeeController extends Controller
     public function index(Pagination $request)
     {
         $request->validated();
-        $employees = $this->EmployeeRepo->getList($request->take);
-        $getSumSalariesGroupByCity = $this->EmployeeRepo->getSumSalariesGroupByCity();
-        return view('pages.employee', compact('employees', 'getSumSalariesGroupByCity'));
+        return $this->EmployeeRepo->getList($request->take);
+    }
+    
+    /**
+     * Display a listing of the employee salary group by city.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getSumSalariesGroupByCity()
+    {
+        return $getSumSalariesGroupByCity = $this->EmployeeRepo->getSumSalariesGroupByCity();
     }
 }
